@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>css-flex-issue</title>
+	<style>
+		* {
+			margin: 0;
+			padding: 0;
+		}
+		.css-flex-issue {
+			display: flex;
+			width: 600px;
+			margin: 50px auto;
+			background-color: #532d61;
+			color: #b7adbb;
+		}
+		.left-item {
+			width: 150px;
+			flex-shrink: 0;
+			text-align: center;
+			line-height: 1.8;
+			padding: 15px;
+		}
+		
+		.right-item {
+			display: flex;
+			flex-grow: 1;
+		}
+		.item {
+			width: 33.3333%;
+		}
+		.key-issue {
+			line-height: 26px;
+			height: 26px;
+			max-height: 26px;
+			white-space: nowrap;
+			text-overflow: ellipsis;
+			overflow: hidden;
+		}
+	</style>
+
+</head>
+<body>
+	<div class="css-flex-issue">
+		<div class="left-item">if use percent in flex child element, the text is long enough,flex will be auto automatic widening!</div>
+		<div class="right-item">
+			<div style="background-color: #33153e;" class="item">
+				<p class="key-issue">expect!!!!</p>
+			</div>
+			<div style="background-color: #a36;" class="item">2</div>
+			<div style="background-color: #66287d;" class="item">3</div>
+		</div>
+	</div>
+	
+	
+	<div class="css-flex-issue">
+		<div class="left-item">if use percent in flex child element, the text is long enough,flex will be auto automatic widening!</div>
+		<div class="right-item">
+			<div style="background-color: #33153e;" class="item">
+				<p class="key-issue">if use percent in flex child element, the text is long enough,flex will be auto automatic widening!if use percent in flex child element, the text is long enough,flex will be auto automatic widening!if use percent in flex child element, the text is long enough,flex will be auto automatic widening!if use percent in flex child element, the text is long enough,flex will be auto automatic widening!</p>
+			</div>
+			<div style="background-color: #a36;" class="item">2</div>
+			<div style="background-color: #66287d;" class="item">3</div>
+		</div>
+	</div>
+</body>
+</html>
